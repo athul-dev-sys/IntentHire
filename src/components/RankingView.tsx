@@ -66,8 +66,19 @@ export default function RankingView({ refreshKey }: RankingViewProps) {
 
   const sourceRows: DisplayCandidate[] = rankedCandidates.length > 0 ? rankedCandidates : candidates;
   const filteredRows = sourceRows.filter((candidate) => {
+    const normalizedSkillFilter = skillFilter.trim().toLowerCase();
+    const searchableText = [
+      candidate.name,
+      candidate.job_role,
+      candidate.batch_label,
+      candidate.source_filename || "",
+      candidate.overall_summary,
+      candidate.justification || "",
+      ...candidate.top_skills,
+      ...(candidate.all_skills || []),
+    ].join(" ").toLowerCase();
     const meetsYears = !minYears || candidate.years_of_experience >= Number(minYears);
-    const matchesSkill = !skillFilter || candidate.top_skills.some((skill) => skill.toLowerCase().includes(skillFilter.toLowerCase()));
+    const matchesSkill = !normalizedSkillFilter || searchableText.includes(normalizedSkillFilter);
     return meetsYears && matchesSkill;
   });
 
@@ -93,7 +104,7 @@ export default function RankingView({ refreshKey }: RankingViewProps) {
             <input value={minYears} onChange={(e) => setMinYears(e.target.value)} className="text-input" placeholder="e.g. 3" />
           </label>
           <label className="field-shell">
-            <span className="field-label">Top Skill Filter</span>
+            <span className="field-label">Skill / Profile Filter</span>
             <input value={skillFilter} onChange={(e) => setSkillFilter(e.target.value)} className="text-input" placeholder="React, Python, AWS..." />
           </label>
           <div style={{ display: "flex", alignItems: "flex-end" }}>

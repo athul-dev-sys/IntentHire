@@ -58,6 +58,7 @@ def calculate_compatibility(jd_text: str, candidates: List[Any], top_k: int = 10
             "score": max(0, min(score_percentage, 100)),
             "justification": _build_justification(candidate.name, matched_skills, years, required_years, candidate_skills),
             "top_skills": top_skills,
+            "all_skills": candidate_skills,
             "years_of_experience": years,
             "job_role": candidate.job_role,
             "batch_label": candidate.batch_label,

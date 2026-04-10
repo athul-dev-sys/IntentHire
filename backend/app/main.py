@@ -152,6 +152,7 @@ def _candidate_to_summary(candidate: Candidate):
         "overall_summary": candidate.overall_summary,
         "years_of_experience": profile_total_years(profile),
         "top_skills": top_profile_skills(profile, 5),
+        "all_skills": profile.global_skills,
         "job_role": candidate.job_role or "Unassigned",
         "batch_label": candidate.batch_label or "Unlabeled Batch",
         "source_filename": candidate.source_filename,

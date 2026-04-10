@@ -15,6 +15,7 @@ export type CandidateSummary = {
   overall_summary: string;
   years_of_experience: number;
   top_skills: string[];
+  all_skills?: string[];
   job_role: string;
   batch_label: string;
   source_filename?: string;
