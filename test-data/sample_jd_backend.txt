@@ -1,0 +1,16 @@
+Job Title: Senior Backend Engineer
+
+We are hiring a Senior Backend Engineer to build scalable recruiter workflow systems.
+
+Requirements:
+- 3+ years of backend engineering experience
+- Strong Python experience
+- Experience with FastAPI or REST API development
+- Experience with AWS and Docker
+- Experience with SQL or PostgreSQL
+- Nice to have: CI/CD and cloud infrastructure automation
+
+What success looks like:
+- Build reliable APIs
+- Support production deployments
+- Collaborate with frontend and ML teams

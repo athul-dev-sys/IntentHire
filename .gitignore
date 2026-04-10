@@ -29,6 +29,16 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
+*.err
+__pycache__/
+*.pyc
+*.db
+.python_packages/
+.venv/
+backend/.venv/
+backend/.python_packages/
+backend/intent_hire.db
 
 # env files (can opt-in for committing if needed)
 .env*
